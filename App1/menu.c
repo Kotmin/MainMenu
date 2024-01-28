@@ -13,15 +13,7 @@ void menu_init(Menu *menu, uint8_t id, LCD *lcd, Menu *parentMenu) {
 	menu->parentMenu = parentMenu;
     menus[id] = *menu; // Store the menu in the global array
 }
-/*
-void menu_addItem(Menu *menu, const char *text, void (*action)(void)) {
-    if (menu->itemCount < MAX_MENU_ITEMS) {
-        strncpy(menu->items[menu->itemCount].text, text, MAX_MENU_LENGTH);
-        menu->items[menu->itemCount].action = action;
-        menu->itemCount++;
-    }
-}
-*/
+
 
 void menu_addItem(Menu *menu, const char *text, void (*action)(Menu *)) {
     if (menu->itemCount < MAX_MENU_ITEMS) {
@@ -60,11 +52,17 @@ void menu_prevItem(Menu *menu) {
     }
 }
 
+
+
 void menu_selectItem(Menu *menu) {
     if (menu->items[menu->current].action) {
         menu->items[menu->current].action(menu);
+		menu_display(menu);
     }
 }
+
+
+
 
 
 void menu_return(Menu *menu) {
@@ -74,8 +72,9 @@ void menu_return(Menu *menu) {
 }
 
 void menu_goto(Menu *currentMenu, uint8_t targetMenuId) {
-    if (targetMenuId < MAX_MENUS) {
+    if (targetMenuId < MAX_MENUS && &menus[targetMenuId] != NULL) {
         menu_display(&menus[targetMenuId]);
+		currentMenu = &menus[targetMenuId];
     }
 }
 

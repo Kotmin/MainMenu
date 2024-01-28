@@ -12,7 +12,9 @@ c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(strn
 Allocating common symbols
 Common symbol       size              file
 
+lcd1                0x4               main.o
 menus               0x3d9             menu.o
+currentMenu         0x2               main.o
 mainMenu            0xc5              main.o
 menu1               0xc5              main.o
 menu4               0xc5              main.o
@@ -132,7 +134,7 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0xbe2
+.text           0x00000000      0xbc2
  *(.vectors)
  .vectors       0x00000000       0x54 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
                 0x00000000                __vectors
@@ -213,64 +215,64 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
                 0x000000a4                __vector_16
                 0x000000a4                __vector_18
                 0x000000a4                __vector_20
- .text          0x000000a8      0x324 main.o
-                0x000000ec                goToMenu1
-                0x000000fc                setupMenus
-                0x000000ac                goToMainMenu
-                0x000000dc                goToMenu2
-                0x00000270                main
-                0x000000bc                goToMenu4
-                0x000000aa                option2_action
-                0x000000cc                goToMenu3
-                0x000000a8                option1_action
- .text          0x000003cc      0x188 my_keyboard_lib.o
-                0x00000462                translate
-                0x00000434                getPin
-                0x0000040c                setPort
-                0x00000494                get_key
-                0x000003cc                set_DDR
- .text          0x00000554      0x21c lcd_lib.o
-                0x000006ea                LCD_clear
-                0x000005b4                LCD_send4BitCommand
-                0x0000062a                LCD_sendInstruction
-                0x000005ec                LCD_writeCharacter
-                0x0000067c                LCD_clearFromPoint
-                0x000006fa                LCD_init
-                0x000006a2                LCD_writeText
-                0x00000554                setDDR
-                0x00000668                LCD_setCoursor
- .text          0x00000770      0x1f6 menu.o
-                0x000008be                menu_prevItem
-                0x00000894                menu_goto
-                0x000007e0                menu_display
-                0x00000770                menu_init
-                0x000007ac                menu_selectItem
-                0x000008aa                menu_return
-                0x00000902                menu_addItem
-                0x000008d4                menu_nextItem
- .text          0x00000966      0x25a menu2.o
-                0x000009c6                moveToParent
-                0x000009a6                moveToChild
-                0x00000966                moveNext
-                0x00000986                movePrev
-                0x000009e6                initMenu
- .text          0x00000bc0        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
- .text          0x00000bc0        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
- .text          0x00000bc0        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
- .text          0x00000bc0        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(strncpy.o)
-                0x00000bc0                . = ALIGN (0x2)
+ .text          0x000000a8      0x2f4 main.o
+                0x000000fa                goToMenu1
+                0x0000010a                setupMenus
+                0x000000ba                goToMainMenu
+                0x000000ea                goToMenu2
+                0x0000026a                main
+                0x000000ca                goToMenu4
+                0x000000a8                option2_action
+                0x000000da                goToMenu3
+                0x000000aa                option1_action
+ .text          0x0000039c      0x188 my_keyboard_lib.o
+                0x00000432                translate
+                0x00000404                getPin
+                0x000003dc                setPort
+                0x00000464                get_key
+                0x0000039c                set_DDR
+ .text          0x00000524      0x21c lcd_lib.o
+                0x000006ba                LCD_clear
+                0x00000584                LCD_send4BitCommand
+                0x000005fa                LCD_sendInstruction
+                0x000005bc                LCD_writeCharacter
+                0x0000064c                LCD_clearFromPoint
+                0x000006ca                LCD_init
+                0x00000672                LCD_writeText
+                0x00000524                setDDR
+                0x00000638                LCD_setCoursor
+ .text          0x00000740      0x206 menu.o
+                0x0000089e                menu_prevItem
+                0x00000830                menu_goto
+                0x0000077c                menu_display
+                0x00000740                menu_init
+                0x0000085c                menu_selectItem
+                0x00000848                menu_return
+                0x000008e2                menu_addItem
+                0x000008b4                menu_nextItem
+ .text          0x00000946      0x25a menu2.o
+                0x000009a6                moveToParent
+                0x00000986                moveToChild
+                0x00000946                moveNext
+                0x00000966                movePrev
+                0x000009c6                initMenu
+ .text          0x00000ba0        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .text          0x00000ba0        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .text          0x00000ba0        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ .text          0x00000ba0        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(strncpy.o)
+                0x00000ba0                . = ALIGN (0x2)
  *(.text.*)
- .text.libgcc   0x00000bc0        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
- .text.libgcc   0x00000bc0        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
- .text.libgcc   0x00000bc0        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc   0x00000ba0        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x00000ba0        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc   0x00000ba0        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
  .text.avr-libc
-                0x00000bc0       0x1e c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(strncpy.o)
-                0x00000bc0                strncpy
-                0x00000bde                . = ALIGN (0x2)
+                0x00000ba0       0x1e c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(strncpy.o)
+                0x00000ba0                strncpy
+                0x00000bbe                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000bde        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
-                0x00000bde                exit
-                0x00000bde                _exit
+ .fini9         0x00000bbe        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                0x00000bbe                exit
+                0x00000bbe                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -289,11 +291,11 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000bde        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .fini0         0x00000bbe        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00000be2                _etext = .
+                0x00000bc2                _etext = .
 
-.data           0x00800060       0x7a load address 0x00000be2
+.data           0x00800060       0x7a load address 0x00000bc2
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800060        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
@@ -315,39 +317,41 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
                 0x008000da                _edata = .
                 0x008000da                PROVIDE (__data_end, .)
 
-.bss            0x008000da      0x818
+.bss            0x008000da      0x81a
                 0x008000da                PROVIDE (__bss_start, .)
  *(.bss)
  .bss           0x008000da        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
- .bss           0x008000da        0x4 main.o
- .bss           0x008000de        0x0 my_keyboard_lib.o
- .bss           0x008000de        0x0 lcd_lib.o
- .bss           0x008000de        0x0 menu.o
- .bss           0x008000de       0x62 menu2.o
- .bss           0x00800140        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
- .bss           0x00800140        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
- .bss           0x00800140        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
- .bss           0x00800140        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(strncpy.o)
+ .bss           0x008000da        0x0 main.o
+ .bss           0x008000da        0x0 my_keyboard_lib.o
+ .bss           0x008000da        0x0 lcd_lib.o
+ .bss           0x008000da        0x0 menu.o
+ .bss           0x008000da       0x62 menu2.o
+ .bss           0x0080013c        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .bss           0x0080013c        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .bss           0x0080013c        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ .bss           0x0080013c        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(strncpy.o)
  *(.bss*)
  *(COMMON)
- COMMON         0x00800140      0x3d9 main.o
-                0x00800140                mainMenu
-                0x00800205                menu1
-                0x008002ca                menu4
-                0x0080038f                menu2
-                0x00800454                menu3
- COMMON         0x00800519      0x3d9 menu.o
-                0x00800519                menus
-                0x008008f2                PROVIDE (__bss_end, .)
-                0x00000be2                __data_load_start = LOADADDR (.data)
-                0x00000c5c                __data_load_end = (__data_load_start + SIZEOF (.data))
+ COMMON         0x0080013c      0x3df main.o
+                0x0080013c                lcd1
+                0x00800140                currentMenu
+                0x00800142                mainMenu
+                0x00800207                menu1
+                0x008002cc                menu4
+                0x00800391                menu2
+                0x00800456                menu3
+ COMMON         0x0080051b      0x3d9 menu.o
+                0x0080051b                menus
+                0x008008f4                PROVIDE (__bss_end, .)
+                0x00000bc2                __data_load_start = LOADADDR (.data)
+                0x00000c3c                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x008008f2        0x0
-                0x008008f2                PROVIDE (__noinit_start, .)
+.noinit         0x008008f4        0x0
+                0x008008f4                PROVIDE (__noinit_start, .)
  *(.noinit*)
-                0x008008f2                PROVIDE (__noinit_end, .)
-                0x008008f2                _end = .
-                0x008008f2                PROVIDE (__heap_start, .)
+                0x008008f4                PROVIDE (__noinit_end, .)
+                0x008008f4                _end = .
+                0x008008f4                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
  *(.eeprom*)
@@ -412,43 +416,43 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
                 0x00000080       0x20 menu2.o
 
 .debug_pubnames
-                0x00000000      0x2e8
+                0x00000000      0x301
  *(.debug_pubnames)
  .debug_pubnames
-                0x00000000       0xce main.o
+                0x00000000       0xe7 main.o
  .debug_pubnames
-                0x000000ce       0x63 my_keyboard_lib.o
+                0x000000e7       0x63 my_keyboard_lib.o
  .debug_pubnames
-                0x00000131       0xbb lcd_lib.o
+                0x0000014a       0xbb lcd_lib.o
  .debug_pubnames
-                0x000001ec       0xa2 menu.o
+                0x00000205       0xa2 menu.o
  .debug_pubnames
-                0x0000028e       0x5a menu2.o
+                0x000002a7       0x5a menu2.o
 
-.debug_info     0x00000000     0x1259
+.debug_info     0x00000000     0x11a5
  *(.debug_info)
- .debug_info    0x00000000      0x406 main.o
- .debug_info    0x00000406      0x2fc my_keyboard_lib.o
- .debug_info    0x00000702      0x572 lcd_lib.o
- .debug_info    0x00000c74      0x38c menu.o
- .debug_info    0x00001000      0x259 menu2.o
+ .debug_info    0x00000000      0x352 main.o
+ .debug_info    0x00000352      0x2fc my_keyboard_lib.o
+ .debug_info    0x0000064e      0x572 lcd_lib.o
+ .debug_info    0x00000bc0      0x38c menu.o
+ .debug_info    0x00000f4c      0x259 menu2.o
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev   0x00000000      0x633
+.debug_abbrev   0x00000000      0x635
  *(.debug_abbrev)
- .debug_abbrev  0x00000000      0x15c main.o
- .debug_abbrev  0x0000015c      0x164 my_keyboard_lib.o
- .debug_abbrev  0x000002c0      0x16c lcd_lib.o
- .debug_abbrev  0x0000042c      0x14b menu.o
- .debug_abbrev  0x00000577       0xbc menu2.o
+ .debug_abbrev  0x00000000      0x15e main.o
+ .debug_abbrev  0x0000015e      0x164 my_keyboard_lib.o
+ .debug_abbrev  0x000002c2      0x16c lcd_lib.o
+ .debug_abbrev  0x0000042e      0x14b menu.o
+ .debug_abbrev  0x00000579       0xbc menu2.o
 
-.debug_line     0x00000000      0xd05
+.debug_line     0x00000000      0xcde
  *(.debug_line)
- .debug_line    0x00000000      0x301 main.o
- .debug_line    0x00000301      0x264 my_keyboard_lib.o
- .debug_line    0x00000565      0x308 lcd_lib.o
- .debug_line    0x0000086d      0x201 menu.o
- .debug_line    0x00000a6e      0x297 menu2.o
+ .debug_line    0x00000000      0x2ca main.o
+ .debug_line    0x000002ca      0x264 my_keyboard_lib.o
+ .debug_line    0x0000052e      0x308 lcd_lib.o
+ .debug_line    0x00000836      0x211 menu.o
+ .debug_line    0x00000a47      0x297 menu2.o
 
 .debug_frame    0x00000000      0x290
  *(.debug_frame)
@@ -458,26 +462,26 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  .debug_frame   0x000001a0       0x90 menu.o
  .debug_frame   0x00000230       0x60 menu2.o
 
-.debug_str      0x00000000      0x459
+.debug_str      0x00000000      0x44b
  *(.debug_str)
- .debug_str     0x00000000      0x1af main.o
-                                0x1f9 (size before relaxing)
- .debug_str     0x000001af       0xd9 my_keyboard_lib.o
+ .debug_str     0x00000000      0x156 main.o
+                                0x1a0 (size before relaxing)
+ .debug_str     0x00000156       0xd9 my_keyboard_lib.o
                                 0x185 (size before relaxing)
- .debug_str     0x00000288       0xbf lcd_lib.o
+ .debug_str     0x0000022f       0xbf lcd_lib.o
                                 0x1b1 (size before relaxing)
- .debug_str     0x00000347       0x8e menu.o
+ .debug_str     0x000002ee       0x8e menu.o
                                 0x18c (size before relaxing)
- .debug_str     0x000003d5       0x84 menu2.o
+ .debug_str     0x0000037c       0xcf menu2.o
                                 0x16c (size before relaxing)
 
-.debug_loc      0x00000000      0x926
+.debug_loc      0x00000000      0x8d6
  *(.debug_loc)
- .debug_loc     0x00000000      0x108 main.o
- .debug_loc     0x00000108      0x201 my_keyboard_lib.o
- .debug_loc     0x00000309      0x2d0 lcd_lib.o
- .debug_loc     0x000005d9      0x285 menu.o
- .debug_loc     0x0000085e       0xc8 menu2.o
+ .debug_loc     0x00000000       0xc8 main.o
+ .debug_loc     0x000000c8      0x201 my_keyboard_lib.o
+ .debug_loc     0x000002c9      0x2d0 lcd_lib.o
+ .debug_loc     0x00000599      0x275 menu.o
+ .debug_loc     0x0000080e       0xc8 menu2.o
 
 .debug_macinfo
  *(.debug_macinfo)
