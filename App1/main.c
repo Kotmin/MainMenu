@@ -97,59 +97,29 @@ int main(void)
 		
 			
 
-			 switch (get_key('d', 'A')) {
+	switch (get_key('d', 'A')) {
             case 4: // Up
                 menu_prevItem(currentMenu);
-
                 break;
             case 8: // Down
                 menu_nextItem(currentMenu);
-
                 break;
             case 12: // Enter
-
                 menu_selectItem(&currentMenu); 
-				option1_action();
-
                 break;
             case 16: // Return
                 if (currentMenu->parentMenu != NULL) {
                     currentMenu = currentMenu->parentMenu;
                     menu_display(currentMenu);
-					}
+			}
                 break;
-        }
-		    }
+       		}
+ 	}
 
 			
 	
 }
 
-
-void goToMenu1(Menu **currentMenuPtr) {
-    *currentMenuPtr = &menu1;
-    menu_display(*currentMenuPtr);
-}
-
-void goToMenu2(Menu **currentMenuPtr) {
-    *currentMenuPtr = &menu2;
-    menu_display(*currentMenuPtr);
-}
-
-void goToMenu3(Menu **currentMenuPtr) {
-    *currentMenuPtr = &menu3;
-    menu_display(*currentMenuPtr);
-}
-
-void goToMenu4(Menu **currentMenuPtr) {
-    *currentMenuPtr = &menu4;
-    menu_display(*currentMenuPtr);
-}
-
-void goToMainMenu(Menu **currentMenuPtr) {
-    *currentMenuPtr = &mainMenu;
-    menu_display(*currentMenuPtr);
-}
 
 
 
