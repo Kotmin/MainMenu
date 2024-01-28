@@ -72,12 +72,11 @@ int main(void)
 	PORTD =0xFF;
 
 
-    LCD_init(&lcd1, 'B'); // Initialize LCD on PORTB
+    LCD_init(&lcd1, 'B'); // LCD on PORTB
 
 
     menu_init(&mainMenu, 0, &lcd1, NULL);
 
- 	// Add items to Menu
     menu_addItem(&mainMenu, "Menu 1", option1_action);
     menu_addItem(&mainMenu, "Menu 2", goToMenu2);
     menu_addItem(&mainMenu, "Menu 3", goToMenu3);
@@ -87,7 +86,6 @@ int main(void)
     menu_addItem(&menu1, "Sm2", option2_action);
 
 
-    // Display the main menu
     menu_display(&mainMenu);
 
 	currentMenu = &mainMenu;
@@ -109,11 +107,9 @@ int main(void)
 
                 break;
             case 12: // Enter
-			if (currentMenu->parentMenu != NULL){
-                menu_selectItem(&currentMenu); // Pass the address of currentMenu
+
+                menu_selectItem(&currentMenu); 
 				option1_action();
-			
-			}
 
                 break;
             case 16: // Return
