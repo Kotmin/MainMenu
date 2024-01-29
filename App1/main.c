@@ -32,7 +32,7 @@ void setupMenus() {
     menu_init(&menu1, 1, &lcd1, &mainMenu);
     menu_init(&menu2, 2, &lcd1, &mainMenu);
     menu_init(&menu3, 3, &lcd1, &mainMenu);
-	menu_init(&menu4, 4, &lcd1, &menu3);
+    menu_init(&menu4, 4, &lcd1, &menu3);
 
     // Add items to mainMenu
     menu_addItem(&mainMenu, "Menu 1", goToMenu1);
@@ -43,13 +43,13 @@ void setupMenus() {
     menu_addItem(&menu1, "Option 1", option1_action);
     menu_addItem(&menu1, "Option 2", option2_action);
 
-	menu_addItem(&menu2, "Option 1", option1_action);
+    menu_addItem(&menu2, "Option 1", option1_action);
     menu_addItem(&menu2, "Option 2", option2_action);
 
-	menu_addItem(&menu3, "Option 1", option1_action);
+    menu_addItem(&menu3, "Option 1", option1_action);
     menu_addItem(&menu3, "Return", goToMenu4);
 
-	menu_addItem(&menu4, "Main Menu", goToMainMenu);
+    menu_addItem(&menu4, "Main Menu", goToMainMenu);
     menu_addItem(&menu4, "Menu 1", goToMenu1);
 
 	currentMenu = &mainMenu;
@@ -81,14 +81,15 @@ int main(void)
     menu_addItem(&mainMenu, "Menu 2", goToMenu2);
     menu_addItem(&mainMenu, "Menu 3", goToMenu3);
 
-	menu_init(&menu1, 1, &lcd1, &mainMenu);
-	menu_addItem(&menu1, "Sm1", option1_action);
+    menu_init(&menu1, 1, &lcd1, &mainMenu);
+    menu_addItem(&menu1, "Sm1", option1_action);
     menu_addItem(&menu1, "Sm2", option2_action);
 
 
-    menu_display(&mainMenu);
+    
 
-	currentMenu = &mainMenu;
+    currentMenu = &mainMenu;
+    menu_display(currentMenu);
 
 
     while (1) 
@@ -105,7 +106,7 @@ int main(void)
                 menu_nextItem(currentMenu);
                 break;
             case 12: // Enter
-                menu_selectItem(&currentMenu); 
+                menu_selectItem(currentMenu); 
                 break;
             case 16: // Return
                 if (currentMenu->parentMenu != NULL) {
